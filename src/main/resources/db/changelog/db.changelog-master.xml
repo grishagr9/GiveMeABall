@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.24.xsd">
+
+    <include file="changelog/001_create_users_table.xml" relativeToChangelogFile="true"/>
+    <include file="changelog/002_create_user_states_table.xml" relativeToChangelogFile="true"/>
+    <include file="changelog/003_create_game_table.xml" relativeToChangelogFile="true"/>
+    <include file="changelog/004_add_ball_column.xml" relativeToChangelogFile="true"/>
+    <include file="changelog/005_add_notification_flags_to_games.xml" relativeToChangelogFile="true"/>
+
+</databaseChangeLog>

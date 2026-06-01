@@ -1,0 +1,33 @@
+spring:
+  application:
+    name: bot
+
+  datasource:
+    url: jdbc:postgresql://localhost:5434/football
+    username: root
+    password: root
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+
+    show-sql: true
+
+  properties:
+    hibernate:
+      format_sql: true
+
+  liquibase:
+    change-log: classpath:/db/changelog/db.changelog-master.xml
+
+telegram:
+  bot:
+    token: ${TELEGRAM_BOT_TOKEN:}
+    link: https://t.me/GiveMeABall_bot?start=
+
+logging:
+  level:
+    root: INFO
+    org.springframework.web: INFO
+    org.hibernate.SQL: DEBUG
