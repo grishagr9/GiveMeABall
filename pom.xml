@@ -11,7 +11,7 @@
 
 	<groupId>grisha.tech</groupId>
 	<artifactId>bot</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.1</version>
 	<properties>
 		<java.version>17</java.version>
 		<org.mapstruct.version>1.5.5.Final</org.mapstruct.version>
