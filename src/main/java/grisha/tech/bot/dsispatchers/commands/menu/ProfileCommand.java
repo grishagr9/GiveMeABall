@@ -1,6 +1,5 @@
 package grisha.tech.bot.dsispatchers.commands.menu;
 
-import grisha.tech.bot.data.dto.CreateGameContext;
 import grisha.tech.bot.dsispatchers.commands.Command;
 import grisha.tech.bot.model.entities.UserEntity;
 import grisha.tech.bot.services.SenderMessageService;

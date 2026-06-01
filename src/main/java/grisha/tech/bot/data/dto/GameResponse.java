@@ -12,4 +12,5 @@ public record GameResponse(
         String status,
         String link,
         String organizerUsername
-) {}
+) {
+}

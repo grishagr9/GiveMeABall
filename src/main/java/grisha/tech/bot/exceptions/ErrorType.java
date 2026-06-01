@@ -14,8 +14,7 @@ public enum ErrorType {
     ORGANIZER_CANNOT_EXIT("Организатор не может выйти из своей игры",
             "Чтобы удалить игру зайди в меню Управление играми"),
     NOT_A_PARTICIPANT("Вы не являлись участником матча",
-            "Выходить можно только из своих матчей")
-    ;
+            "Выходить можно только из своих матчей");
 
     private final String description;
     private final String action;

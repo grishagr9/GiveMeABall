@@ -11,7 +11,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.meta.api.objects.Update;
 
-import static grisha.tech.bot.data.enums.UserState.*;
+import static grisha.tech.bot.data.enums.UserState.WAITING_FOR_GAME_LEVEL;
+import static grisha.tech.bot.data.enums.UserState.WAITING_FOR_GAME_SLOTS;
 
 @Component
 @RequiredArgsConstructor
@@ -33,7 +34,6 @@ public class SetGameSlotsHandler implements StateHandler {
         Long telegramId = update.getMessage().getFrom().getId();
         Long chatId = update.getMessage().getChatId();
         Integer slots = Integer.parseInt(update.getMessage().getText());
-
 
 
         CreateGameContext context = userStateService.getContext(telegramId);

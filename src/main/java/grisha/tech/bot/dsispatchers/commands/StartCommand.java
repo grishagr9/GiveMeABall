@@ -2,10 +2,10 @@ package grisha.tech.bot.dsispatchers.commands;
 
 import grisha.tech.bot.data.enums.UserState;
 import grisha.tech.bot.services.InviteService;
-import grisha.tech.bot.services.keyBoards.KeyBoardService;
 import grisha.tech.bot.services.SenderMessageService;
 import grisha.tech.bot.services.UserService;
 import grisha.tech.bot.services.UserStateService;
+import grisha.tech.bot.services.keyBoards.KeyBoardService;
 import grisha.tech.bot.services.keyBoards.KeyboardRegistrationFactory;
 import grisha.tech.bot.services.utils.MessageUtils;
 import lombok.RequiredArgsConstructor;

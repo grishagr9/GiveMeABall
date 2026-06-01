@@ -25,7 +25,7 @@ public class DeleteGameCommand implements Command {
                              GameService gameService, GameMapper mapper
     ) {
         this.utils = utils;
-        command=utils.getMessage("manageGames.delete");
+        command = utils.getMessage("manageGames.delete");
         this.deleteGameKeyboardFactory = deleteGameKeyboardFactory;
         this.sender = sender;
         this.gameService = gameService;

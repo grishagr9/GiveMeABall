@@ -9,4 +9,5 @@ public record CreateGameRequest(
         Integer totalSlots,
         Integer level,
         Long organizerTelegramId
-) {}
+) {
+}

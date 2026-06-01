@@ -7,4 +7,5 @@ public record GameReminder24hEvent(
         Long gameId,
         String gameTitle,
         List<Long> participantIds
-) {}
+) {
+}

@@ -7,10 +7,10 @@ import grisha.tech.bot.services.SenderMessageService;
 import grisha.tech.bot.services.UserStateService;
 import grisha.tech.bot.services.utils.MessageUtils;
 import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.meta.api.objects.Update;
 
-import static grisha.tech.bot.data.enums.UserState.*;
+import static grisha.tech.bot.data.enums.UserState.WAITING_FOR_GAME_LEVEL;
+import static grisha.tech.bot.data.enums.UserState.WAITING_FOR_GAME_TITLE;
 
 //@Component
 @RequiredArgsConstructor

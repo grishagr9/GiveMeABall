@@ -5,7 +5,6 @@ import grisha.tech.bot.mappers.GameMapper;
 import grisha.tech.bot.services.GameService;
 import grisha.tech.bot.services.SenderMessageService;
 import grisha.tech.bot.services.UserService;
-import grisha.tech.bot.services.keyBoards.DeleteGameKeyboardFactory;
 import grisha.tech.bot.services.keyBoards.GameKeyboardFactory;
 import grisha.tech.bot.services.utils.MessageUtils;
 import org.springframework.stereotype.Component;

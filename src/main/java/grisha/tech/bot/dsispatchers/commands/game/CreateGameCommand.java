@@ -23,7 +23,7 @@ public class CreateGameCommand implements Command {
                              SenderMessageService sender
     ) {
         this.utils = utils;
-        command=utils.getMessage("manageGames.create");
+        command = utils.getMessage("manageGames.create");
         this.stateService = stateService;
         this.sender = sender;
     }

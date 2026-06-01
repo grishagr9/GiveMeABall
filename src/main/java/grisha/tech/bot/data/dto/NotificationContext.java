@@ -6,4 +6,5 @@ public record NotificationContext(
         Long chatId,
         String message,
         ReplyKeyboard keyboard // Опционально, если нужны кнопки
-) {}
+) {
+}

@@ -5,4 +5,5 @@ import java.util.List;
 public record GameCancelledEvent(
         String gameTitle,
         List<Long> participantTelegramIds
-) {}
+) {
+}

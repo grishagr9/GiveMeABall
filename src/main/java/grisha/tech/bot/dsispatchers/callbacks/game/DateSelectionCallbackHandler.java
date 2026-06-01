@@ -9,7 +9,6 @@ import grisha.tech.bot.services.keyBoards.TimeKeyboardFactory;
 import grisha.tech.bot.services.utils.MessageUtils;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
-import org.telegram.telegrambots.meta.api.methods.AnswerCallbackQuery;
 import org.telegram.telegrambots.meta.api.objects.CallbackQuery;
 
 import java.time.LocalDate;

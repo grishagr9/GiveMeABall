@@ -6,4 +6,5 @@ import java.util.List;
 public record GameReminder1hEvent(
         String gameTitle,
         List<Long> participantIds
-) {}
+) {
+}
