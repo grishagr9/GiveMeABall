@@ -36,7 +36,7 @@ jobs:
         run: |
           mkdir deploy
           cp target/*.jar deploy/bot.jar
-          cp docker-compose.yml deploy/
+          cp docker-compose.yaml deploy/
           cp Dockerfile deploy/
 
       # 5. Копирование файлов на сервер
