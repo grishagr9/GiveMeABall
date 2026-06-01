@@ -21,7 +21,7 @@ public class NotificationEventListener {
 
     @EventListener
     public void handleGameCancelled(GameCancelledEvent event) {
-        String message = utils.getMessage("deleteGame.notification",  event.gameTitle());
+        String message = utils.getMessage("deleteGame.notification", event.gameTitle());
 
         notificationService.sendMassNotification(
                 event.participantTelegramIds(),

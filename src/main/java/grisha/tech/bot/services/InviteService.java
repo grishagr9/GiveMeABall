@@ -19,8 +19,8 @@ public class InviteService {
             String inviteCode
     ) {
         GameEntity game = gameRepository
-                        .findByGameLink(inviteCode)
-                        .orElseThrow();
+                .findByGameLink(inviteCode)
+                .orElseThrow();
 
         telegramSender.sendMessage(
                 telegramId,

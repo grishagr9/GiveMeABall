@@ -172,9 +172,9 @@ public class KeyBoardService {
     public InlineKeyboardMarkup confirmationKeyboard() {
         InlineKeyboardButton yes = inlineButton("✅ Да", "confirm_game_yes");
         InlineKeyboardButton no = inlineButton("❌ Нет", "confirm_game_no");
-        
+
         InlineKeyboardRow row = new InlineKeyboardRow(List.of(yes, no));
-        
+
         return InlineKeyboardMarkup.builder()
                 .keyboard(List.of(row))
                 .build();

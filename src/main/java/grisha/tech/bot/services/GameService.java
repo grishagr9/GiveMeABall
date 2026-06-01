@@ -161,7 +161,7 @@ public class GameService {
         return participantRepository.findUsersByGameId(gameId)
                 .stream()
                 .filter(Objects::nonNull)
-                .map(p -> new Player(p.getUser().getUsername(),  p.getBall()))
+                .map(p -> new Player(p.getUser().getUsername(), p.getBall()))
                 .toList();
     }
 
