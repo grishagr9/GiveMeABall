@@ -1,0 +1,71 @@
+name: Deploy to VPS
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - '**/*.java'
+      - '**/*.yml'
+      - '**/pom.xml'
+      - '**/Dockerfile'
+      - '!**.md'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Checkout код
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # 2. Настройка JDK
+      - name: Set up JDK 17
+        uses: actions/setup-java@v3
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+
+      # 3. Сборка JAR файла (Maven)
+      - name: Build with Maven
+        run: mvn clean package -DskipTests
+
+      # 4. Подготовка к деплою
+      - name: Prepare deployment
+        run: |
+          mkdir deploy
+          cp target/*.jar deploy/bot.jar
+          cp docker-compose.yml deploy/
+          cp Dockerfile deploy/
+
+      # 5. Копирование файлов на сервер
+      - name: Copy files to VPS
+        uses: appleboy/scp-action@v0.1.4
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          port: ${{ secrets.VPS_PORT }}
+          username: ${{ secrets.VPS_USER }}
+          key: ${{ secrets.VPS_SSH_KEY }}
+          source: "deploy/*"
+          target: "/home/${{ secrets.VPS_USER }}/GiveMeBallBot/bot/"
+          strip_components: 1
+
+      # 6. Перезапуск контейнеров на сервере
+      - name: Restart Docker containers
+        uses: appleboy/ssh-action@v0.1.10
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          port: ${{ secrets.VPS_PORT }}
+          username: ${{ secrets.VPS_USER }}
+          key: ${{ secrets.VPS_SSH_KEY }}
+          script: |
+            cd /home/${{ secrets.VPS_USER }}/GiveMeBallBot/bot
+            # Переместить JAR в нужную папку
+            mv bot.jar target/ || true
+            # Пересобрать и перезапустить
+            docker compose down
+            docker compose build --no-cache
+            docker compose up -d
+            # Очистить неиспользуемые образы
+            docker image prune -f
