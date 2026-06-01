@@ -48,7 +48,7 @@ jobs:
           username: ${{ secrets.VPS_USER }}
           key: ${{ secrets.VPS_SSH_KEY }}
           source: "deploy/*"
-          target: "/home/${{ secrets.VPS_USER }}/GiveMeBallBot/bot/"
+          target: "/home/${{ secrets.VPS_USER }}/GiveMeABall/"
           strip_components: 1
 
       # 6. Перезапуск контейнеров на сервере
@@ -60,7 +60,7 @@ jobs:
           username: ${{ secrets.VPS_USER }}
           key: ${{ secrets.VPS_SSH_KEY }}
           script: |
-            cd /home/${{ secrets.VPS_USER }}/GiveMeBallBot/bot
+            cd /home/${{ secrets.VPS_USER }}/GiveMeABall/
             # Переместить JAR в нужную папку
             mv bot.jar target/ || true
             # Пересобрать и перезапустить
