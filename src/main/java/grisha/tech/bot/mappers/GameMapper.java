@@ -13,6 +13,7 @@ import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Locale;
 
 @Mapper(componentModel = "spring",
         imports = {LocalDateTime.class, java.util.UUID.class})
@@ -26,7 +27,7 @@ public abstract class GameMapper {
     protected String linkToBot;
 
     private static final DateTimeFormatter DATE_FORMATTER =
-            DateTimeFormatter.ofPattern("EEEE, d MMMM, HH:mm");
+            DateTimeFormatter.ofPattern("EEEE, d MMMM, HH:mm", new Locale("ru"));
 
     public String formatDate(LocalDateTime dateTime) {
         return dateTime == null ? "" : dateTime.format(DATE_FORMATTER);
